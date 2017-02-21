@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.wwang</groupId>
+    <artifactId>wwang-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>wwang-manager</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <description>管理工程，聚合几个模块</description>
+  
+  <dependencies>
+  		<dependency>
+  			<groupId>com.wwang</groupId>
+  			<artifactId>wwang-common</artifactId>
+  			<version>0.0.1-SNAPSHOT</version>
+  		</dependency>
+  </dependencies>
+  
+  
+  <modules>
+  	<module>wwang-manager-pojo</module>
+  	<module>wwang-manager-mapper</module>
+  	<module>wwang-manager-service</module>
+  	<module>wwang-manager-web</module>
+  </modules>
+  
+  
+  <build>
+  	<plugins>
+  			<!-- 配置Tomcat插件 -->
+				<plugin>
+					<groupId>org.apache.tomcat.maven</groupId>
+					<artifactId>tomcat7-maven-plugin</artifactId>
+					<configuration>
+						<port>8080</port>
+						<path>/wwang</path>
+					</configuration>
+				</plugin>
+  	</plugins>
+  </build>
+</project>
